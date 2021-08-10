@@ -6,7 +6,7 @@
 /*   By: jestevam < jestevam@student.42sp.org.br    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/09 20:40:39 by jestevam          #+#    #+#             */
-/*   Updated: 2021/08/10 00:23:47 by jestevam         ###   ########.fr       */
+/*   Updated: 2021/08/10 11:05:56 by jestevam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,7 +57,9 @@ static int	count_lines(char *files, t_map *map)
 			return (-3);
 		rslt = read(fd, c, 1);
 	}
-	map->row_map++;
+	if (map->column_map != 0)
+		map->row_map++;
+	printf("lines %i\n", map->row_map);
 	free(c);
 	close(fd);
 	return (0);
@@ -65,31 +67,28 @@ static int	count_lines(char *files, t_map *map)
 
 int	ft_read_map(char *file, t_map *map)
 {
-	int	count;
-	int	index;
-	int	fd;
+	int		count;
+	int		index;
+	int		fd;
 	char	*line;
 
-	line = ft_calloc(map->column_map, sizeof(char));
-	index = -1;
+	index = 0;
 	map->column_map = 0;
 	map->row_map = 0;
 	map->base = 0;
-	fd = open(file, O_RDONLY);
 	count = count_lines(file, map);
 	if (count < 0)
 		return (count * -1);
-	printf("feito\n");
-	map->map = malloc(map->column_map * map->row_map);
-	if (map->map != NULL)
-		return (4);
-	while (index++ < map->row_map)
+	fd = open(file, O_RDONLY);
+	map->map = ft_calloc(map->column_map * map->row_map + 1, sizeof(char));
+	index = get_next_line(fd, &map->map[index++]);
+	while (index < map->row_map)
+		get_next_line(fd, &map->map[index++]);
+	index = 0;
+	while (index < map->row_map)
 	{
-		get_next_line(fd, &line);
-		printf("line: %s\n", line);
-		//map->map[index] = ft_strdup(line);
-		free(line);
-	}
-	printf ("text: %s\n", map->map[0]);
+		printf("line %i:%10s\n", index + 1, map->map[index]);
+		index++;
+	}		
 	return (0);
 }
