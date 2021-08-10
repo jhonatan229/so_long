@@ -14,6 +14,10 @@ typedef struct s_map
 	int		row_map;
 	int		column_map;
 	int		base;
+	int		player_pos;
+	int		items;
+	int		exits;
+	int		outsider;
 }				t_map;
 
 int	ft_read_map(char *file, t_map *map);
