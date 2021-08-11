@@ -24,13 +24,6 @@ typedef struct s_map
 	int		outsider;
 }				t_map;
 
-typedef struct	s_win {
-	void	*mlx;
-	void	*win;
-	int		height;
-	int		width;
-}				t_win;
-
 typedef struct	s_img {
 	void	*img;
 	char	*addr;
@@ -49,7 +42,19 @@ typedef struct s_sprites{
 	int		py_player;
 }				t_sprites;
 
+typedef struct	s_win {
+	void	*mlx;
+	void	*win;
+	t_map	*mlmap;
+	t_sprites	*mlspt;
+	int		height;
+	int		width;
+}				t_win;
+
 int	ft_read_map(char *file, t_map *map);
-int	ft_start_game(t_win *mlx, t_map *map, t_sprites *spt);
+int	ft_start_game(t_win *mlx, t_sprites *spt);
+int	move_player(int keycode, t_win *mlx);
+int init_image(t_img *img, char *file, t_win *win);
+int render_map(t_win *mlx);
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: jestevam < jestevam@student.42sp.org.br    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/09 20:40:39 by jestevam          #+#    #+#             */
-/*   Updated: 2021/08/10 18:07:09 by jestevam         ###   ########.fr       */
+/*   Updated: 2021/08/11 18:36:51 by jestevam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,11 +18,11 @@ static int	verify_number_column(char c, t_map *map)
 		map->base++;
 	if (c != '\n')
 		map->column_map++;
-	if (c == 'p' || c == 'P')
+	if (c == 'P')
 		map->player_pos++;
-	else if (c == 'c' || c == 'C')
+	else if (c == 'C')
 		map->items++;
-	else if (c == 'e' || c == 'E')
+	else if (c == 'E')
 		map->exits++;
 	else if (c != '1' && c != '0' && c != '\n')
 		map->outsider++;
@@ -91,12 +91,14 @@ static int check_map(t_map *map)
 		}
 		else
 		{
-			if (map->map[index][0] != '1' || map->map[index][map->column_map - 1] != '1')
+			if (map->map[index][0] != '1' || 
+							map->map[index][map->column_map - 1] != '1')
 				return (-2);
 		}
 		index++;
 	}
-	if (map->exits <= 0 || map->items <= 0 || map->player_pos != 1 || map->outsider > 0)
+	if (map->exits <= 0 || map->items <= 0 || map->player_pos != 1 
+										|| map->outsider > 0)
 		return (-2);
 	return (0);
 }
