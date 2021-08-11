@@ -6,13 +6,11 @@
 /*   By: jestevam < jestevam@student.42sp.org.br    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/09 20:40:39 by jestevam          #+#    #+#             */
-/*   Updated: 2021/08/10 17:32:17 by jestevam         ###   ########.fr       */
+/*   Updated: 2021/08/10 18:07:09 by jestevam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "utils.h"
-#include "gnl/get_next_line.h"
-#include "libft/libft.h"
+#include "../utils.h"
 
 static int	verify_number_column(char c, t_map *map)
 {
@@ -120,15 +118,8 @@ int	ft_read_map(char *file, t_map *map)
 	while (index < map->row_map)
 		get_next_line(fd, &map->map[index++]);
 	count = check_map(map);
-	printf("count: %i\n", count);
+	//printf("count: %i\n", count);
 	if (count < 0)
-		return (count * -1);
-	
-	//index = 0;
-	//while (index < map->row_map)
-	//{
-	//	printf("line %i:%10s\n", index + 1, map->map[index]);
-	//	index++;
-	//}		
+		return (count * -1);	
 	return (0);
 }
