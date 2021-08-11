@@ -6,7 +6,7 @@
 /*   By: jestevam < jestevam@student.42sp.org.br    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/09 19:31:34 by jestevam          #+#    #+#             */
-/*   Updated: 2021/08/10 21:40:33 by jestevam         ###   ########.fr       */
+/*   Updated: 2021/08/10 23:20:35 by jestevam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,7 @@ int	main(void)
 {
 	t_map	map;
 	t_win	mlx;
+	t_sprites	sprites;
 	int		return_map;
 	int		index;
 
@@ -55,7 +56,7 @@ int	main(void)
 	}
 	mlx.width = WIDTH_SPT * map.column_map;
 	mlx.height = HEIGHT_SPT * map.row_map;
-	ft_start_game(&mlx, &map);
+	ft_start_game(&mlx, &map, &sprites);
 	free_map(&map);
 	return (0);
 }

@@ -39,7 +39,17 @@ typedef struct	s_img {
 	int		endian;
 }				t_img;
 
+typedef struct s_sprites{
+	t_img	wall;
+	t_img	floor;
+	t_img	door;
+	t_img	item;
+	t_img	player;
+	int		px_player;
+	int		py_player;
+}				t_sprites;
+
 int	ft_read_map(char *file, t_map *map);
-int	ft_start_game(t_win *mlx, t_map *map);
+int	ft_start_game(t_win *mlx, t_map *map, t_sprites *spt);
 
 #endif
