@@ -14,7 +14,7 @@
 
 //find the first ocorrence of my string 'needle' in my 'haystack'
 //search the only first 'n' characters of my haystack
-char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
+int	ft_strnstr(const char *haystack, const char *needle, size_t len)
 {
 	size_t	phay;
 	size_t	pneed;
@@ -22,7 +22,7 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 	phay = 0;
 	//verify if my needle is equals to 0, if true, return a pointer to the beegin of my haystack
 	if (*needle == 0)
-		return ((char *)haystack);
+		return (0);
 	//verify if my haystack in position phay is different to \0
 	while (haystack[phay] != 0)
 	{
@@ -31,11 +31,11 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 		{
 			//if the next position of my needle is \0, return a pointer of beegin of my string needle in haystack
 			if (needle[pneed + 1] == 0)
-				return ((char *) haystack + phay);
+				return (1);
 			pneed++;
 		}
 		phay++;
 	}
 	// return null if my needle doesn't found
-	return (NULL);
+	return (0);
 }

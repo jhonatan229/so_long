@@ -51,11 +51,12 @@ typedef struct	s_win {
 	int		width;
 }				t_win;
 
-int	ft_read_map(char *file, t_map *map);
-int	ft_start_game(t_win *mlx, t_sprites *spt);
-int	actions(int keycode, t_win *mlx);
-int render_map(t_win *mlx);
-void init_var_map(t_map *map);
-int free_map(t_map *map);
+int		ft_read_map(char *file, t_map *map);
+int		ft_start_game(t_win *mlx);
+int		actions(int keycode, t_win *mlx);
+int 	render_map(t_win *mlx);
+void	init_var_map(t_map *map);
+int		free_map(t_map *map);
+int		error_map(int index_error, t_map *map);
 
 #endif

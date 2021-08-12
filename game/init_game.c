@@ -6,7 +6,7 @@
 /*   By: jestevam < jestevam@student.42sp.org.br    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/10 18:03:38 by jestevam          #+#    #+#             */
-/*   Updated: 2021/08/11 21:15:54 by jestevam         ###   ########.fr       */
+/*   Updated: 2021/08/12 00:23:52 by jestevam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ static void init_img(t_win *mlx)
 }
 
 
-int	ft_start_game(t_win *mlx, t_sprites *spt)
+int	ft_start_game(t_win *mlx)
 {
 	mlx->mlx = mlx_init();
 	mlx->win = mlx_new_window(mlx->mlx, mlx->width, mlx->height, "SO_LONG");
