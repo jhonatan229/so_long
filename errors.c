@@ -6,7 +6,7 @@
 /*   By: jestevam < jestevam@student.42sp.org.br    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/11 23:06:33 by jestevam          #+#    #+#             */
-/*   Updated: 2021/08/12 16:25:45 by jestevam         ###   ########.fr       */
+/*   Updated: 2021/08/12 18:24:06 by jestevam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,5 +33,10 @@ int	error_map(int index_error, t_map *map)
 		print_error(">>>>Forgot to pass the map file!<<<<");
 	if (index_error == 5)
 		print_error(">>>>the file needs to be a .ber<<<<");
+	if (index_error == 6)
+	{
+		free_map(map);
+		print_error(">>>>Error in get space to the malloc!<<<<");
+	}
 	return (1);
 }

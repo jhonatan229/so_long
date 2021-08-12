@@ -6,7 +6,7 @@
 /*   By: jestevam < jestevam@student.42sp.org.br    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/09 19:31:34 by jestevam          #+#    #+#             */
-/*   Updated: 2021/08/12 13:14:24 by jestevam         ###   ########.fr       */
+/*   Updated: 2021/08/12 18:24:26 by jestevam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ int	main(int argc, char *argv[])
 		return (error_map(5, &map));
 	init_var_map(&map);
 	return_map = ft_read_map(argv[1], &map);
-	//return_map = 1;
+	//return_map = 6;
 	if (return_map > 0)
 		return (error_map(return_map, &map));
 	mlx.mlmap = &map;

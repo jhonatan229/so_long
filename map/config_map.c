@@ -6,7 +6,7 @@
 /*   By: jestevam < jestevam@student.42sp.org.br    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/11 19:29:14 by jestevam          #+#    #+#             */
-/*   Updated: 2021/08/12 17:27:49 by jestevam         ###   ########.fr       */
+/*   Updated: 2021/08/12 18:21:11 by jestevam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,8 @@ int	make_backup_map(t_map *map)
 
 	index = 0;
 	map->back_map = ft_calloc(map->column_map * map->row_map + 1, sizeof(char));
+	if (map->back_map == NULL)
+		return (6);
 	while (index < map->row_map)
 	{
 		map->back_map[index] = ft_strdup(map->map[index]);

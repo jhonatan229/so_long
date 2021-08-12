@@ -6,7 +6,7 @@
 /*   By: jestevam < jestevam@student.42sp.org.br    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/09 20:40:39 by jestevam          #+#    #+#             */
-/*   Updated: 2021/08/12 17:04:50 by jestevam         ###   ########.fr       */
+/*   Updated: 2021/08/12 18:20:43 by jestevam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -115,6 +115,8 @@ int	ft_read_map(char *file, t_map *map)
 		return (count * -1);
 	fd = open(file, O_RDONLY);
 	map->map = ft_calloc(map->column_map * map->row_map + 1, sizeof(char));
+	if (map->map == NULL)
+		return (6);
 	index = get_next_line(fd, &map->map[index++]);
 	while (index < map->row_map)
 		get_next_line(fd, &map->map[index++]);

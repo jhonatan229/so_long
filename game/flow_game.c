@@ -6,7 +6,7 @@
 /*   By: jestevam < jestevam@student.42sp.org.br    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/11 12:04:53 by jestevam          #+#    #+#             */
-/*   Updated: 2021/08/12 17:02:27 by jestevam         ###   ########.fr       */
+/*   Updated: 2021/08/12 18:25:28 by jestevam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,10 +22,7 @@ static void	verify_pos(t_win *mlx, int x, int y, int mark)
 		mlx->mlmap->map[mlx->mlspt->player.py_player][mlx->mlspt->player.px_player] = '0';
 		mlx->mlmap->map[y][x] = 'P';
 		if (mark == 1)
-		{
 			mlx->mlspt->player.steps++;
-			printf("steps: %i\n", mlx->mlspt->player.steps);
-		}
 	}
 	else if (mlx->mlmap->map[y][x] == 'E' && mlx->mlmap->items == 0)
 	{
