@@ -6,7 +6,7 @@
 /*   By: jestevam < jestevam@student.42sp.org.br    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/10 18:03:38 by jestevam          #+#    #+#             */
-/*   Updated: 2021/08/12 17:22:11 by jestevam         ###   ########.fr       */
+/*   Updated: 2021/08/12 17:44:05 by jestevam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,6 +55,7 @@ static int rendermap(t_win *mlx)
 		mlx->reset_spt = 0;
 		mlx_clear_window(mlx->mlx, mlx->win);
 	}
+	//mlx_string_put(mlx->mlx, mlx->win, 25, 25, 15921152, "boatardeeeeeee");
 	render_map(mlx, mlx->mlspt->player.spt_move);
 	return (0);
 }
