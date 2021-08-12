@@ -6,7 +6,7 @@
 /*   By: jestevam < jestevam@student.42sp.org.br    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/11 12:04:53 by jestevam          #+#    #+#             */
-/*   Updated: 2021/08/12 02:23:24 by jestevam         ###   ########.fr       */
+/*   Updated: 2021/08/12 02:33:28 by jestevam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,8 @@
 
 static void	verify_pos(t_win *mlx, int x, int y)
 {
-	if (mlx->mlmap->map[y][x] == '0' || mlx->mlmap->map[y][x] == 'C')
+	if (mlx->mlmap->map[y][x] == '0' || mlx->mlmap->map[y][x] == 'C' || 
+										mlx->mlmap->map[y][x] == 'P')
 	{
 		mlx->mlspt->player.px_player = x;
 		mlx->mlspt->player.py_player = y;
