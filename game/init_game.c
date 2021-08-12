@@ -6,7 +6,7 @@
 /*   By: jestevam < jestevam@student.42sp.org.br    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/10 18:03:38 by jestevam          #+#    #+#             */
-/*   Updated: 2021/08/12 12:15:13 by jestevam         ###   ########.fr       */
+/*   Updated: 2021/08/12 13:23:59 by jestevam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,12 @@ static int close_win(t_win *mlx)
 	exit(0);
 }
 
+static int rendermap(t_win *mlx)
+{
+	mlx_clear_window(mlx->mlx, mlx->win);
+	render_map(mlx, mlx->mlspt->player.spt_move);
+	return (0);
+}
 int	ft_start_game(t_win *mlx)
 {
 	mlx->mlx = mlx_init();
@@ -53,6 +59,7 @@ int	ft_start_game(t_win *mlx)
 	render_map(mlx, 1);
 	mlx_hook(mlx->win, 17, 0, close_win, mlx);
 	mlx_key_hook(mlx->win, actions, mlx);
+	mlx_loop_hook(mlx->mlx, rendermap, mlx);
 	mlx_loop(mlx->mlx);
-	return (0);
+	return (1);
 }

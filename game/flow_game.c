@@ -6,7 +6,7 @@
 /*   By: jestevam < jestevam@student.42sp.org.br    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/11 12:04:53 by jestevam          #+#    #+#             */
-/*   Updated: 2021/08/12 12:25:56 by jestevam         ###   ########.fr       */
+/*   Updated: 2021/08/12 13:24:10 by jestevam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,7 +69,6 @@ int	actions(int keycode, t_win *mlx)
 {
 	int mark;
 	
-	mlx_clear_window(mlx->mlx, mlx->win);
 	int	x = mlx->mlspt->player.px_player;
 	int	y = mlx->mlspt->player.py_player;
 	if (keycode == 65307)
@@ -82,6 +81,5 @@ int	actions(int keycode, t_win *mlx)
 		mark = check_key(&x, &y, keycode, &mlx->mlspt->player);
 		verify_pos(mlx, x, y, mark);
 	}
-	render_map(mlx, mlx->mlspt->player.spt_move);
 	return (0);
 }
