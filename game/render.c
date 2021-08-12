@@ -6,24 +6,11 @@
 /*   By: jestevam < jestevam@student.42sp.org.br    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/11 13:01:20 by jestevam          #+#    #+#             */
-/*   Updated: 2021/08/11 18:29:34 by jestevam         ###   ########.fr       */
+/*   Updated: 2021/08/11 20:51:52 by jestevam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../utils.h"
-
-int init_image(t_img *img, char *file, t_win *win)
-{
-	int	x;
-	int	y;
-
-	x = WIDTH_SPT;
-	y = HEIGHT_SPT;
-	img->img = mlx_xpm_file_to_image(win->mlx, file, &x, &y);
-	img->addr = mlx_get_data_addr(img->img, &img->bits_per_pixel,
-	 							&img->line_length, &img->endian);
-	return (0);
-}
 
 static int populate_field(t_win *win, t_sprites *spt)
 {
@@ -32,8 +19,6 @@ static int populate_field(t_win *win, t_sprites *spt)
 
 	index = 0;
 	count = 0;
-	init_image(&spt->door, "sprites/door.xpm", win);
-	init_image(&spt->item, "sprites/item.xpm", win);
 	while (index < win->mlmap->row_map)
 	{
 		while (count < win->mlmap->column_map)
@@ -59,7 +44,6 @@ static int put_player(t_win *win, t_sprites *spt)
 
 	index = 0;
 	count = 0;
-	init_image(&spt->player, "sprites/player.xpm", win);
 	while (index < win->mlmap->row_map)
 	{
 		if (spt->px_player != 0 && spt->py_player != 0)
@@ -88,8 +72,6 @@ static int create_environment(t_win *win, t_sprites *spt)
 
 	index = 0;
 	count = 0;
-	init_image(&spt->wall, "sprites/wall.xpm", win);
-	init_image(&spt->floor, "sprites/floor.xpm", win);
 	while (index < win->mlmap->row_map)
 	{
 		while (count < win->mlmap->column_map)

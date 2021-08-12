@@ -53,8 +53,9 @@ typedef struct	s_win {
 
 int	ft_read_map(char *file, t_map *map);
 int	ft_start_game(t_win *mlx, t_sprites *spt);
-int	move_player(int keycode, t_win *mlx);
-int init_image(t_img *img, char *file, t_win *win);
+int	actions(int keycode, t_win *mlx);
 int render_map(t_win *mlx);
+void init_var_map(t_map *map);
+int free_map(t_map *map);
 
 #endif
