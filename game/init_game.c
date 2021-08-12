@@ -6,7 +6,7 @@
 /*   By: jestevam < jestevam@student.42sp.org.br    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/10 18:03:38 by jestevam          #+#    #+#             */
-/*   Updated: 2021/08/12 01:30:05 by jestevam         ###   ########.fr       */
+/*   Updated: 2021/08/12 02:28:19 by jestevam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,10 +27,13 @@ static int init_image(t_img *img, char *file, t_win *win)
 
 static void init_img(t_win *mlx)
 {
-	mlx->mlspt->steps = 0;
+	mlx->mlspt->player.steps = 0;
 	init_image(&mlx->mlspt->door, "sprites/door.xpm", mlx);
 	init_image(&mlx->mlspt->item, "sprites/item.xpm", mlx);
-	init_image(&mlx->mlspt->player, "sprites/player.xpm", mlx);
+	init_image(&mlx->mlspt->player.down, "sprites/pdown.xpm", mlx);
+	init_image(&mlx->mlspt->player.up, "sprites/pup.xpm", mlx);
+	init_image(&mlx->mlspt->player.left, "sprites/pleft.xpm", mlx);
+	init_image(&mlx->mlspt->player.rigth, "sprites/pright.xpm", mlx);
 	init_image(&mlx->mlspt->wall, "sprites/wall.xpm", mlx);
 	init_image(&mlx->mlspt->floor, "sprites/floor.xpm", mlx);
 }
@@ -41,7 +44,7 @@ int	ft_start_game(t_win *mlx)
 	mlx->mlx = mlx_init();
 	mlx->win = mlx_new_window(mlx->mlx, mlx->width, mlx->height, "SO_LONG");
 	init_img(mlx);
-	render_map(mlx);
+	render_map(mlx, 1);
 	mlx_key_hook(mlx->win, actions, mlx);
 	mlx_loop(mlx->mlx);
 	return (0);

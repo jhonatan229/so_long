@@ -32,15 +32,23 @@ typedef struct	s_img {
 	int		endian;
 }				t_img;
 
+typedef struct s_player{
+	t_img	up;
+	t_img	left;
+	t_img	down;
+	t_img	rigth;
+	int		px_player;
+	int		py_player;
+	int		steps;
+	int		spt_move;
+}				t_player;
+
 typedef struct s_sprites{
 	t_img	wall;
 	t_img	floor;
 	t_img	door;
 	t_img	item;
-	t_img	player;
-	int		px_player;
-	int		py_player;
-	int		steps;
+	t_player player;
 }				t_sprites;
 
 typedef struct	s_win {
@@ -55,7 +63,7 @@ typedef struct	s_win {
 int		ft_read_map(char *file, t_map *map);
 int		ft_start_game(t_win *mlx);
 int		actions(int keycode, t_win *mlx);
-int 	render_map(t_win *mlx);
+int		render_map(t_win *mlx, int p_direction);
 void	init_var_map(t_map *map);
 int		free_map(t_map *map);
 int		error_map(int index_error, t_map *map);
