@@ -49,6 +49,7 @@ typedef struct s_sprites{
 	t_img	floor;
 	t_img	door;
 	t_img	item;
+	t_img	hostil;
 	t_player player;
 }				t_sprites;
 

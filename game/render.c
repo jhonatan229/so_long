@@ -6,41 +6,11 @@
 /*   By: jestevam < jestevam@student.42sp.org.br    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/11 13:01:20 by jestevam          #+#    #+#             */
-/*   Updated: 2021/08/12 16:07:29 by jestevam         ###   ########.fr       */
+/*   Updated: 2021/08/12 17:24:11 by jestevam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../utils.h"
-
-//static void put_player(t_win *win, t_img *spt, t_player *player)
-//{
-//	int		index;
-//	int		count;
-//
-//	index = 0;
-//	count = 0;
-//	if (player->px_player == -1 && player->py_player == -1)
-//		return ;
-//	while (index < win->mlmap->row_map)
-//	{
-//		if (player->px_player != 0 && player->py_player != 0)
-//			break;
-//		while (count < win->mlmap->column_map)
-//		{
-//			if (win->mlmap->map[index][count] == 'P')
-//			{
-//					player->px_player = count;
-//					player->py_player = index;
-//					win->mlmap->map[index][count] = '0';
-//			}
-//			count++;
-//		}
-//		count = 0;
-//		index++;
-//	}
-//	mlx_put_image_to_window(win->mlx, win->win, spt->img, 
-//				WIDTH_SPT * player->px_player, HEIGHT_SPT * player->py_player);
-//}
 
 static void print_image(t_win *mlx, t_img *img, int count, int index)
 {
@@ -64,6 +34,8 @@ static void create_environment(t_win *win, t_img *p_spt, int count, int index)
 				print_image(win, &win->mlspt->item, count, index);
 			else if (win->mlmap->map[index][count] == 'E')
 				print_image(win, &win->mlspt->door, count, index);
+			else if (win->mlmap->map[index][count] == 'H')
+				print_image(win, &win->mlspt->hostil, count, index);
 			else if (win->mlmap->map[index][count] == 'P')
 			{
 				win->mlspt->player.py_player = index;

@@ -6,7 +6,7 @@
 /*   By: jestevam < jestevam@student.42sp.org.br    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/09 20:40:39 by jestevam          #+#    #+#             */
-/*   Updated: 2021/08/12 16:24:55 by jestevam         ###   ########.fr       */
+/*   Updated: 2021/08/12 17:04:50 by jestevam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ static int	verify_number_column(char c, t_map *map)
 		map->items++;
 	else if (c == 'E')
 		map->exits++;
-	else if (c != '1' && c != '0' && c != '\n')
+	else if (c != '1' && c != '0' && c != '\n' && c != 'H')
 		map->outsider++;
 	if (c == '\n')
 	{

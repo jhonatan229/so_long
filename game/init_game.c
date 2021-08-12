@@ -6,7 +6,7 @@
 /*   By: jestevam < jestevam@student.42sp.org.br    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/10 18:03:38 by jestevam          #+#    #+#             */
-/*   Updated: 2021/08/12 15:43:49 by jestevam         ###   ########.fr       */
+/*   Updated: 2021/08/12 17:22:11 by jestevam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,7 @@ static void init_img(t_win *mlx)
 	init_image(&mlx->mlspt->player.rigth, "sprites/pright.xpm", mlx);
 	init_image(&mlx->mlspt->wall, "sprites/wall.xpm", mlx);
 	init_image(&mlx->mlspt->floor, "sprites/floor.xpm", mlx);
+	init_image(&mlx->mlspt->hostil, "sprites/fire.xpm", mlx);
 }
 
 static int close_win(t_win *mlx)
@@ -49,7 +50,7 @@ static int close_win(t_win *mlx)
 static int rendermap(t_win *mlx)
 {
 	mlx->reset_spt += 0.1;
-	if (mlx->reset_spt >= 100)
+	if (mlx->reset_spt >= 30)
 	{
 		mlx->reset_spt = 0;
 		mlx_clear_window(mlx->mlx, mlx->win);

@@ -6,7 +6,7 @@
 /*   By: jestevam < jestevam@student.42sp.org.br    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/12 16:42:03 by jestevam          #+#    #+#             */
-/*   Updated: 2021/08/12 16:51:13 by jestevam         ###   ########.fr       */
+/*   Updated: 2021/08/12 17:23:53 by jestevam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,6 @@ static void reset_var_game(t_win *mlx)
 {
 	mlx->mlspt->player.steps = 0;
 	mlx->mlspt->player.spt_move = 1;
-	mlx->reset_spt = 0;
 }
 
 static void reset_map(t_map *map)
