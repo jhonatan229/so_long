@@ -6,7 +6,7 @@
 /*   By: jestevam < jestevam@student.42sp.org.br    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/11 12:04:53 by jestevam          #+#    #+#             */
-/*   Updated: 2021/08/11 21:42:14 by jestevam         ###   ########.fr       */
+/*   Updated: 2021/08/12 01:36:03 by jestevam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,12 +23,15 @@ static void	verify_pos(t_win *mlx, int x, int y)
 			mlx->mlmap->map[y][x] = '0';
 			mlx->mlmap->items--;
 		}
+		mlx->mlspt->steps++;
+		printf("steps: %i\n", mlx->mlspt->steps);
 	}
 	if (mlx->mlmap->map[y][x] == 'E' && mlx->mlmap->items == 0)
 	{
 		mlx->mlspt->px_player = -1;
 		mlx->mlspt->py_player = -1;
 	}
+
 }
 
 static void check_key(int *x, int *y, int keycode)
@@ -48,7 +51,6 @@ int	actions(int keycode, t_win *mlx)
 	mlx_clear_window(mlx->mlx, mlx->win);
 	int	x = mlx->mlspt->px_player;
 	int	y = mlx->mlspt->py_player;
-	printf("press: %i\n", keycode);
 	if (keycode == 65307)
 	{
 		free_map(mlx->mlmap);

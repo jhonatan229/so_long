@@ -40,6 +40,7 @@ typedef struct s_sprites{
 	t_img	player;
 	int		px_player;
 	int		py_player;
+	int		steps;
 }				t_sprites;
 
 typedef struct	s_win {

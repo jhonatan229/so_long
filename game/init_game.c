@@ -6,7 +6,7 @@
 /*   By: jestevam < jestevam@student.42sp.org.br    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/10 18:03:38 by jestevam          #+#    #+#             */
-/*   Updated: 2021/08/12 00:23:52 by jestevam         ###   ########.fr       */
+/*   Updated: 2021/08/12 01:30:05 by jestevam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@ static int init_image(t_img *img, char *file, t_win *win)
 
 static void init_img(t_win *mlx)
 {
+	mlx->mlspt->steps = 0;
 	init_image(&mlx->mlspt->door, "sprites/door.xpm", mlx);
 	init_image(&mlx->mlspt->item, "sprites/item.xpm", mlx);
 	init_image(&mlx->mlspt->player, "sprites/player.xpm", mlx);
