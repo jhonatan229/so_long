@@ -6,7 +6,7 @@
 /*   By: jestevam < jestevam@student.42sp.org.br    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/11 12:04:53 by jestevam          #+#    #+#             */
-/*   Updated: 2021/08/12 16:10:08 by jestevam         ###   ########.fr       */
+/*   Updated: 2021/08/12 16:53:38 by jestevam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,7 +73,9 @@ int	actions(int keycode, t_win *mlx)
 		free_map(mlx->mlmap);
 		exit(0);
 	}
-	if (mlx->mlspt->player.py_player > 0 && mlx->mlspt->player.px_player > 0)
+	else if (keycode == 114)
+		reset_game(mlx);
+	else if (mlx->mlspt->player.py_player > 0 && mlx->mlspt->player.px_player > 0)
 	{
 		mark = check_key(&x, &y, keycode, &mlx->mlspt->player);
 		verify_pos(mlx, x, y, mark);

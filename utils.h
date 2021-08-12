@@ -70,5 +70,6 @@ void	init_var_map(t_map *map);
 int		free_map(t_map *map);
 int		error_map(int index_error, t_map *map);
 int		make_backup_map(t_map *map);
+void	reset_game(t_win *mlx);
 
 #endif
