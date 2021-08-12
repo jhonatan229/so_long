@@ -6,13 +6,13 @@
 /*   By: jestevam < jestevam@student.42sp.org.br    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/11 13:01:20 by jestevam          #+#    #+#             */
-/*   Updated: 2021/08/11 20:51:52 by jestevam         ###   ########.fr       */
+/*   Updated: 2021/08/11 22:00:29 by jestevam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../utils.h"
 
-static int populate_field(t_win *win, t_sprites *spt)
+static void populate_field(t_win *win, t_sprites *spt)
 {
 	int		index;
 	int		count;
@@ -34,16 +34,17 @@ static int populate_field(t_win *win, t_sprites *spt)
 		count = 0;
 		index++;
 	}
-	return (0);
 }
 
-static int put_player(t_win *win, t_sprites *spt)
+static void put_player(t_win *win, t_sprites *spt)
 {
 	int		index;
 	int		count;
 
 	index = 0;
 	count = 0;
+	if (spt->px_player == -1 && spt->py_player == -1)
+		return ;
 	while (index < win->mlmap->row_map)
 	{
 		if (spt->px_player != 0 && spt->py_player != 0)
@@ -62,10 +63,9 @@ static int put_player(t_win *win, t_sprites *spt)
 	}
 	mlx_put_image_to_window(win->mlx, win->win, spt->player.img, 
 							WIDTH_SPT * spt->px_player, HEIGHT_SPT * spt->py_player);
-	return (0);
 }
 
-static int create_environment(t_win *win, t_sprites *spt)
+static void create_environment(t_win *win, t_sprites *spt)
 {
 	int		index;
 	int		count;
@@ -86,7 +86,6 @@ static int create_environment(t_win *win, t_sprites *spt)
 		count = 0;
 		index++;
 	}
-	return (0);
 }
 
 int render_map(t_win *mlx)

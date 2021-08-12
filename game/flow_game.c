@@ -6,7 +6,7 @@
 /*   By: jestevam < jestevam@student.42sp.org.br    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/11 12:04:53 by jestevam          #+#    #+#             */
-/*   Updated: 2021/08/11 21:16:54 by jestevam         ###   ########.fr       */
+/*   Updated: 2021/08/11 21:42:14 by jestevam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,29 @@ static void	verify_pos(t_win *mlx, int x, int y)
 	{
 		mlx->mlspt->px_player = x;
 		mlx->mlspt->py_player = y;
-		mlx->mlmap->map[y][x] = '0';
+		if (mlx->mlmap->map[y][x] == 'C')
+		{
+			mlx->mlmap->map[y][x] = '0';
+			mlx->mlmap->items--;
+		}
 	}
+	if (mlx->mlmap->map[y][x] == 'E' && mlx->mlmap->items == 0)
+	{
+		mlx->mlspt->px_player = -1;
+		mlx->mlspt->py_player = -1;
+	}
+}
+
+static void check_key(int *x, int *y, int keycode)
+{
+	if (keycode == 97)
+		*x -= 1;//img->x -= 20;
+	else if (keycode == 115)
+		*y += 1;//img->y -= 20;
+	else if (keycode == 119)
+		*y -= 1;//img->y += 20;
+	else if (keycode == 100)
+		*x += 1;//img->x += 20;
 }
 
 int	actions(int keycode, t_win *mlx)
@@ -33,15 +54,11 @@ int	actions(int keycode, t_win *mlx)
 		free_map(mlx->mlmap);
 		exit(0);
 	}
-	if (keycode == 97)
-		x--;//img->x -= 20;
-	else if (keycode == 115)
-		y++;//img->y -= 20;
-	else if (keycode == 119)
-		y--;//img->y += 20;
-	else if (keycode == 100)
-		x++;//img->x += 20;
-	verify_pos(mlx, x, y);
+	if (mlx->mlspt->py_player > 0 && mlx->mlspt->px_player > 0)
+	{
+		check_key(&x, &y, keycode);
+		verify_pos(mlx, x, y);
+	}
 	render_map(mlx);
 	return (0);
 }
