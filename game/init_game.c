@@ -6,7 +6,7 @@
 /*   By: jestevam < jestevam@student.42sp.org.br    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/10 18:03:38 by jestevam          #+#    #+#             */
-/*   Updated: 2021/08/12 13:23:59 by jestevam         ###   ########.fr       */
+/*   Updated: 2021/08/12 15:43:49 by jestevam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,7 @@ static void init_img(t_win *mlx)
 {
 	mlx->mlspt->player.steps = 0;
 	mlx->mlspt->player.spt_move = 1;
+	mlx->reset_spt = 0;
 	init_image(&mlx->mlspt->door, "sprites/door.xpm", mlx);
 	init_image(&mlx->mlspt->item, "sprites/item.xpm", mlx);
 	init_image(&mlx->mlspt->player.down, "sprites/pdown.xpm", mlx);
@@ -47,7 +48,12 @@ static int close_win(t_win *mlx)
 
 static int rendermap(t_win *mlx)
 {
-	mlx_clear_window(mlx->mlx, mlx->win);
+	mlx->reset_spt += 0.1;
+	if (mlx->reset_spt >= 100)
+	{
+		mlx->reset_spt = 0;
+		mlx_clear_window(mlx->mlx, mlx->win);
+	}
 	render_map(mlx, mlx->mlspt->player.spt_move);
 	return (0);
 }
@@ -61,5 +67,5 @@ int	ft_start_game(t_win *mlx)
 	mlx_key_hook(mlx->win, actions, mlx);
 	mlx_loop_hook(mlx->mlx, rendermap, mlx);
 	mlx_loop(mlx->mlx);
-	return (1);
+	return (0);
 }

@@ -58,6 +58,7 @@ typedef struct	s_win {
 	t_sprites	*mlspt;
 	int		height;
 	int		width;
+	float	reset_spt;
 }				t_win;
 
 int		ft_read_map(char *file, t_map *map);
