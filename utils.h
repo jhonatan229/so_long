@@ -15,6 +15,7 @@
 typedef struct s_map
 {
 	char	**map;
+	char	**back_map;
 	int		row_map;
 	int		column_map;
 	int		base;
@@ -68,5 +69,6 @@ int		render_map(t_win *mlx, int p_direction);
 void	init_var_map(t_map *map);
 int		free_map(t_map *map);
 int		error_map(int index_error, t_map *map);
+int		make_backup_map(t_map *map);
 
 #endif

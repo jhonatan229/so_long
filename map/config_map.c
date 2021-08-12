@@ -6,7 +6,7 @@
 /*   By: jestevam < jestevam@student.42sp.org.br    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/11 19:29:14 by jestevam          #+#    #+#             */
-/*   Updated: 2021/08/12 00:22:26 by jestevam         ###   ########.fr       */
+/*   Updated: 2021/08/12 16:34:44 by jestevam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,8 +31,25 @@ int free_map(t_map *map)
 	while (index < map->row_map)
 	{
 		free(map->map[index]);
+		free(map->back_map[index]);
 		index++;
 	}
 	free(map->map);
+	free(map->back_map);
+	return (0);
+}
+
+int	make_backup_map(t_map *map)
+{
+	int index;
+
+	index = 0;
+	map->back_map = ft_calloc(map->column_map * map->row_map + 1, sizeof(char));
+	while (index < map->row_map)
+	{
+		map->back_map[index] = ft_strdup(map->map[index]);
+		//printf("line %i: %s\n", index, map->back_map[index]);
+		index++;
+	}
 	return (0);
 }

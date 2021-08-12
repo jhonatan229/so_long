@@ -6,7 +6,7 @@
 /*   By: jestevam < jestevam@student.42sp.org.br    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/09 20:40:39 by jestevam          #+#    #+#             */
-/*   Updated: 2021/08/12 00:21:58 by jestevam         ###   ########.fr       */
+/*   Updated: 2021/08/12 16:24:55 by jestevam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -121,6 +121,6 @@ int	ft_read_map(char *file, t_map *map)
 	count = check_map(map);
 	//printf("count: %i\n", count);
 	if (count < 0)
-		return (count * -1);	
-	return (0);
+		return (count * -1);
+	return (make_backup_map(map));
 }
