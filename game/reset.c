@@ -6,19 +6,19 @@
 /*   By: jestevam < jestevam@student.42sp.org.br    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/12 16:42:03 by jestevam          #+#    #+#             */
-/*   Updated: 2021/08/12 17:23:53 by jestevam         ###   ########.fr       */
+/*   Updated: 2021/08/13 01:28:41 by jestevam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../utils.h"
 
-static void reset_var_game(t_win *mlx)
+static	void	reset_var_game(t_win *mlx)
 {
 	mlx->mlspt->player.steps = 0;
 	mlx->mlspt->player.spt_move = 1;
 }
 
-static void reset_map(t_map *map)
+static	void	reset_map(t_map *map)
 {
 	int	y;
 	int	x;
@@ -41,7 +41,7 @@ static void reset_map(t_map *map)
 	}
 }
 
-void reset_game(t_win *mlx)
+void	reset_game(t_win *mlx)
 {
 	reset_var_game(mlx);
 	reset_map(mlx->mlmap);

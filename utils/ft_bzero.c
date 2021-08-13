@@ -12,7 +12,6 @@
 
 #include "../utils.h"
 
-// transform, in my string s, n bytes in \0 
 void	ft_bzero(void *s, size_t n)
 {
 	size_t			count;

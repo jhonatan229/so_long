@@ -6,14 +6,14 @@
 /*   By: jestevam < jestevam@student.42sp.org.br    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/11 23:06:33 by jestevam          #+#    #+#             */
-/*   Updated: 2021/08/12 18:33:09 by jestevam         ###   ########.fr       */
+/*   Updated: 2021/08/13 01:29:12 by jestevam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <string.h>
 #include "utils.h"
 
-static void print_error(char *message)
+static	void	print_error(char *message)
 {
 	printf("\033[0;31m" " Error\n%s\n" "\033[0m", message);
 }

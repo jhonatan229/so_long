@@ -24,7 +24,7 @@ typedef struct s_map
 	int		outsider;
 }				t_map;
 
-typedef struct	s_img {
+typedef struct s_img {
 	void	*img;
 	char	*addr;
 	int		bits_per_pixel;
@@ -44,22 +44,22 @@ typedef struct s_player{
 }				t_player;
 
 typedef struct s_sprites{
-	t_img	wall;
-	t_img	floor;
-	t_img	door;
-	t_img	item;
-	t_img	hostil;
-	t_player player;
+	t_img		wall;
+	t_img		floor;
+	t_img		door;
+	t_img		item;
+	t_img		hostil;
+	t_player	player;
 }				t_sprites;
 
-typedef struct	s_win {
-	void	*mlx;
-	void	*win;
-	t_map	*mlmap;
+typedef struct s_win {
+	void		*mlx;
+	void		*win;
+	t_map		*mlmap;
 	t_sprites	*mlspt;
-	int		height;
-	int		width;
-	float	reset_spt;
+	int			height;
+	int			width;
+	float		reset_spt;
 }				t_win;
 
 int		ft_read_map(char *file, t_map *map);
