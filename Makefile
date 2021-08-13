@@ -33,6 +33,9 @@ $(PATH_OBJ)/%.o:	$(SRC)
 	@mkdir -p $(PATH_OBJ)utils
 	$(CC) $(CFLAGS)  -I. -c $< -o $@
 
+norm: 
+	norminette map game gnl utils errors.c so_long.c utils.h
+
 clean:  
 	rm -rf $(PATH_OBJ)
 
