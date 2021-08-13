@@ -6,7 +6,7 @@
 /*   By: jestevam < jestevam@student.42sp.org.br    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/07 16:37:56 by jestevam          #+#    #+#             */
-/*   Updated: 2021/06/14 15:57:57 by jestevam         ###   ########.fr       */
+/*   Updated: 2021/08/13 12:05:26 by jestevam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ static int	findc(char *s, char c)
 	return (-1);
 }
 
-static char	*addline (char *str, char **line, int point, int *rslt)
+static char	*addline(char *str, char **line, int point, int *rslt)
 {
 	int	count;
 	int	len;
