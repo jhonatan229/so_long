@@ -6,14 +6,14 @@
 /*   By: jestevam < jestevam@student.42sp.org.br    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/23 14:30:27 by jestevam          #+#    #+#             */
-/*   Updated: 2021/08/12 23:08:31 by jestevam         ###   ########.fr       */
+/*   Updated: 2021/08/13 00:05:26 by jestevam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../utils.h"
 
 //trasform my nb in positive number
-int	static	ft_to_positive(int nb, char *rslt, int *count)
+static int	ft_to_positive(int nb, char *rslt, int *count)
 {
 	//put '-' in my string result and add more one on my count that is on my function ft_itoa
 	rslt[0] = '-';
@@ -31,7 +31,7 @@ int	static	ft_to_positive(int nb, char *rslt, int *count)
 }
 
 //count a quantity of places on my number nb
-int static	ft_quantitynum(int nb)
+static int	ft_quantitynum(int nb)
 {
 	int		count;
 	int		pos;
