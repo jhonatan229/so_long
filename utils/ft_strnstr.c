@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../utils.h"
 
 //find the first ocorrence of my string 'needle' in my 'haystack'
 //search the only first 'n' characters of my haystack

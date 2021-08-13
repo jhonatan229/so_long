@@ -6,7 +6,6 @@
 
 # include "mlx_linux/mlx.h"
 # include "gnl/get_next_line.h"
-# include "libft/libft.h"
 # include <unistd.h>
 # include <fcntl.h>
 # include <stdio.h>
@@ -72,5 +71,9 @@ int		free_map(t_map *map);
 int		error_map(int index_error, t_map *map);
 int		make_backup_map(t_map *map);
 void	reset_game(t_win *mlx);
+int		ft_strnstr(const char *haystack, const char *needle, size_t len);
+void	*ft_calloc(size_t nmemb, size_t size);
+char	*ft_itoa(int n);
+void	ft_bzero(void *s, size_t n);
 
 #endif

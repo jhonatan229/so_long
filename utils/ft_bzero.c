@@ -1,29 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strrchr.c                                       :+:      :+:    :+:   */
+/*   ft_bzero.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jestevam < jestevam@student.42sp.org.br    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/05/18 15:14:48 by jestevam          #+#    #+#             */
-/*   Updated: 2021/05/18 15:14:48 by jestevam         ###   ########.fr       */
+/*   Created: 2021/05/17 22:10:07 by jestevam          #+#    #+#             */
+/*   Updated: 2021/05/17 22:10:07 by jestevam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../utils.h"
 
-//return a pointer to the last occurrence of c in my string s
-//return null if not found any occurrence of c
-char	*ft_strrchr(const char *s, int c)
+// transform, in my string s, n bytes in \0 
+void	ft_bzero(void *s, size_t n)
 {
-	int	count;
+	size_t			count;
+	unsigned char	*p;
 
-	count = ft_strlen(s);
-	while (count >= 0)
+	p = (unsigned char *)s;
+	count = 0;
+	while (count < n)
 	{
-		if (s[count] == (char)c)
-			return ((char *)s + count);
-		count--;
+		*p = 0;
+		p++;
+		count++;
 	}
-	return (NULL);
+	return ;
 }

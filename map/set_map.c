@@ -6,7 +6,7 @@
 /*   By: jestevam < jestevam@student.42sp.org.br    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/09 20:40:39 by jestevam          #+#    #+#             */
-/*   Updated: 2021/08/12 18:20:43 by jestevam         ###   ########.fr       */
+/*   Updated: 2021/08/12 23:23:48 by jestevam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -105,7 +105,6 @@ int	ft_read_map(char *file, t_map *map)
 	int		count;
 	int		index;
 	int		fd;
-	char	*line;
 
 	index = 0;
 	fd = open(file, O_RDONLY);

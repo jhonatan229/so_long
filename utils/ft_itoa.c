@@ -6,11 +6,11 @@
 /*   By: jestevam < jestevam@student.42sp.org.br    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/23 14:30:27 by jestevam          #+#    #+#             */
-/*   Updated: 2021/06/02 13:23:24 by jestevam         ###   ########.fr       */
+/*   Updated: 2021/08/12 23:08:31 by jestevam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../utils.h"
 
 //trasform my nb in positive number
 int	static	ft_to_positive(int nb, char *rslt, int *count)
