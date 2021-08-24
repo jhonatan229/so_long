@@ -6,7 +6,7 @@
 /*   By: jestevam < jestevam@student.42sp.org.br    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/11 23:06:33 by jestevam          #+#    #+#             */
-/*   Updated: 2021/08/13 01:29:12 by jestevam         ###   ########.fr       */
+/*   Updated: 2021/08/13 13:11:58 by jestevam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,5 +38,7 @@ int	error_map(int index_error, t_map *map)
 		free_map(map);
 		print_error(">>>>Error in get space to the malloc!<<<<");
 	}
+	if (index_error == 7)
+		print_error(">>>>a lot of arguments passing!!<<<<");
 	return (1);
 }

@@ -6,7 +6,7 @@
 /*   By: jestevam < jestevam@student.42sp.org.br    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/09 20:40:39 by jestevam          #+#    #+#             */
-/*   Updated: 2021/08/13 01:06:04 by jestevam         ###   ########.fr       */
+/*   Updated: 2021/08/23 21:44:55 by jestevam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,11 +53,11 @@ static int	count_lines(int fd, t_map *map)
 			return (-3);
 		rslt = read(fd, &c, 1);
 	}
+	map->row_map++;
 	if (map->base != map->column_map)
 		return (-3);
 	if (map->column_map < 3 || map->row_map < 3)
 		return (-3);
-	map->row_map++;
 	return (0);
 }
 
@@ -117,8 +117,10 @@ int	ft_read_map(char *file, t_map *map)
 	index = get_next_line(fd, &map->map[index++]);
 	while (index < map->row_map)
 		get_next_line(fd, &map->map[index++]);
+	if (make_backup_map(map))
+		return (-5);
 	count = check_map(map);
 	if (count < 0)
 		return (count * -1);
-	return (make_backup_map(map));
+	return (0);
 }

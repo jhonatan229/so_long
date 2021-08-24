@@ -21,6 +21,8 @@ MLXFLAGS = -lmlx -Ilmlx -lXext -lX11 -I $(PATH_MLX) -L $(PATH_MLX)
 
 all: $(NAME)
 
+bonus: all
+
 $(NAME): $(OBJS)
 	@make -C $(PATH_MLX)
 	$(CC) $(CFLAGS) $(OBJS) so_long.c $(MLXFLAGS) $(PATH_MLX)libmlx.a -o $(NAME)

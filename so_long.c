@@ -6,7 +6,7 @@
 /*   By: jestevam < jestevam@student.42sp.org.br    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/09 19:31:34 by jestevam          #+#    #+#             */
-/*   Updated: 2021/08/13 01:30:10 by jestevam         ###   ########.fr       */
+/*   Updated: 2021/08/14 15:37:42 by jestevam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,10 @@ int	main(int argc, char *argv[])
 	t_win		mlx;
 	int			return_map;
 
-	if (argc != 2)
+	if (argc < 2)
 		return (error_map(4, &map));
+	if (argc > 2)
+		return (error_map(7, &map));
 	if (ft_strnstr(argv[1], ".ber", ft_strlen(argv[1])) == 0)
 		return (error_map(5, &map));
 	init_var_map(&map);
