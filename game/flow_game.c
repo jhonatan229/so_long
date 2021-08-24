@@ -6,12 +6,14 @@
 /*   By: jestevam < jestevam@student.42sp.org.br    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/11 12:04:53 by jestevam          #+#    #+#             */
-/*   Updated: 2021/08/13 01:23:31 by jestevam         ###   ########.fr       */
+/*   Updated: 2021/08/23 23:16:51 by jestevam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../utils.h"
 
+// verify if the locale that the player want to go is free
+// refresh the locale of the player
 static void	verify_pos(t_win *mlx, int x, int y, int mark)
 {
 	int	px;
@@ -39,6 +41,7 @@ static void	verify_pos(t_win *mlx, int x, int y, int mark)
 		reset_game(mlx);
 }
 
+//verify each key is pressed
 static	int	check_key(int *x, int *y, int keycode, t_player *player)
 {
 	if (keycode == 97)
@@ -66,6 +69,7 @@ static	int	check_key(int *x, int *y, int keycode, t_player *player)
 	return (1);
 }
 
+//make actions of the player
 int	actions(int keycode, t_win *mlx)
 {
 	int	mark;

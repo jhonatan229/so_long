@@ -6,12 +6,13 @@
 /*   By: jestevam < jestevam@student.42sp.org.br    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/09 20:40:39 by jestevam          #+#    #+#             */
-/*   Updated: 2021/08/23 21:44:55 by jestevam         ###   ########.fr       */
+/*   Updated: 2021/08/23 23:14:32 by jestevam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../utils.h"
 
+//verify if is end of the line and put info into struct map;
 static int	verify_number_column(char c, t_map *map)
 {
 	if (c != '\n' && map->row_map == 0)
@@ -37,6 +38,7 @@ static int	verify_number_column(char c, t_map *map)
 	return (0);
 }
 
+//count the quantity of lines that map have
 static int	count_lines(int fd, t_map *map)
 {
 	char	c;
@@ -61,6 +63,7 @@ static int	count_lines(int fd, t_map *map)
 	return (0);
 }
 
+//verify if my last line and first line is full 1
 static int	verify_line(char *str)
 {
 	int	count;
@@ -72,6 +75,7 @@ static int	verify_line(char *str)
 	return (0);
 }
 
+//verify if map have what is needed
 static int	check_map(t_map *map)
 {
 	int	index;
@@ -98,6 +102,8 @@ static int	check_map(t_map *map)
 	return (0);
 }
 
+// read map and save in a table char ** if is all alright
+// make backup for restart the game
 int	ft_read_map(char *file, t_map *map)
 {
 	int		count;
