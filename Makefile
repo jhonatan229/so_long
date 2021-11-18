@@ -17,7 +17,7 @@ NAME = so_long
 
 CC = clang
 CFLAGS = -Wall -Wextra -Werror
-MLXFLAGS = -lmlx -Ilmlx -lXext -lX11 -I $(PATH_MLX) -L $(PATH_MLX)
+MLXFLAGS = -lmlx -Ilmlx -lXext -lX11 -lbsd -I $(PATH_MLX) -L $(PATH_MLX)
 
 all: $(NAME)
 
@@ -46,3 +46,6 @@ fclean: clean
 	rm -rf $(NAME)
 
 re: fclean all
+
+teste:
+	valgrind --leak-check=full --show-leak-kinds=all --track-origins=yes --verbose --log-file=valgrind-out.txt ./so_long
